@@ -2,8 +2,14 @@
 	height: 100vh;
 	overflow-x: hidden;
 	overflow-y: auto;
-	perspective: 1px;
+	perspective: 300px;
 	font-size: 30px;
+}
+
+.parallax-group{
+	position: relative;
+	height: 100vh;
+	transform-style: preserve-3d;
 }
 
 .parallax-layer{
@@ -19,10 +25,16 @@
 
 .parallax-base-layer{
 	transform: translateZ(0);
+	z-index: 4;
 }
 
-.parallax-back-layer{
-	transform: translateZ(-1px) scale(2);
+.parallax-background-layer{
+	transform: translateZ(-300px) scale(2);
+	z-index: 3;
+}
+
+.parallax-front-layer{
+	transform: translateZ(90px) scale(.7);
 }
 
 .holder-text{
@@ -30,6 +42,24 @@
 	left: 50%;
 	top: 50%;
 }
+
+#group1 .parallax-base-layer{
+	background: blue;
+}
+
+#group2 .parallax-background-layer{
+	background: red;
+}
+
+#group3 .parallax-front-layer{
+	background: yellow;
+}
+
+
+
+
+
+
 
 
 
